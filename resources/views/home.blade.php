@@ -13,8 +13,9 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    @can('create-user')
+                    HOME
+                    @endcan
                 </div>
             </div>
         </div>

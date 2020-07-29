@@ -26,5 +26,17 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         //
+        Gate::define('normal-user',function($user){
+            return $user->role == 1;
+        });
+ 
+        Gate::define('update-post',function($user,$post){
+            // ポストしたユーザーしかupdateできない
+            return $user->id === $post->user_id;
+        });
+
+        //ポリシーに書いた
+        Gate::define('create-user','App\Policies\PostPolicy@create');
+
     }
 }

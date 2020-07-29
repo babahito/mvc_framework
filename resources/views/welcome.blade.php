@@ -66,7 +66,7 @@
     </head>
     <body>
     <div id="app">
-<example-component></example-component>
+</example-component>
 </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
@@ -109,5 +109,6 @@
         });
         
         </script> -->
+        <script src="{{asset('js/app.js')}}"></script>
     </body>
 </html>
